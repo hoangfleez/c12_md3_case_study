@@ -1,0 +1,689 @@
+<!doctype html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.3.0/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <title>Home</title>
+    <style>
+
+        @import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
+
+        * {
+            font-family: 'Quicksand', sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #b8d953;
+            --lilac: #b2b2eb;
+            --pink: #bb86e9;
+            --dark-green: #529a91;
+            --peach: #fe96b7;
+            --black: #191819;
+            --grey: #2a292a;
+            --white: #d9d9d9;
+        }
+
+
+        body {
+            background-color: black;
+            color: #FFFFFFC8;
+            display: flex;
+            place-content: center;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+
+        .bizzy {
+            display: flex;
+            align-items: center;
+            gap: 5%;
+            justify-content: space-around;
+            max-height: 100px;
+            text-align: center;
+        }
+
+        @keyframes fontGrow {
+            0% {
+                transform: scaleY(1);
+            }
+            50% {
+                transform: scaleY(2);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+        }
+
+        .bizzy-letters {
+            animation-name: fontGrow;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            transform-origin: top;
+            transition-timing-function: ease-in-out;
+        }
+
+        .letter-b {
+            color: var(--peach);
+        }
+
+        .letter-i {
+            color: var(--green);
+            animation-delay: 1s;
+        }
+
+        .letter-z1 {
+            color: var(--pink);
+        }
+
+        .letter-z2 {
+            color: var(--lilac);
+            animation-delay: 1s;
+        }
+
+        .letter-y {
+            color: var(--dark-green);
+        }
+
+        .bizzy-B {
+            display: flex;
+            justify-content: space-around;
+            gap: 5%;
+        }
+
+        @keyframes fontGrowReverse {
+            0% {
+                transform: scaleY(2);
+            }
+            50% {
+                transform: scaleY(1);
+            }
+            100% {
+                transform: scaleY(2);
+            }
+        }
+
+        .bizzy-letters-B {
+            animation-name: fontGrowReverse;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            transform-origin: bottom;
+            transition-timing-function: ease-in-out;
+
+        }
+
+        .letter-C {
+            color: #cbe69f;
+        }
+
+        .letter-O {
+            color: #cbe;
+            animation-delay: 1s;
+            font-stretch: ultra-condensed;
+        }
+
+        .letter-D {
+            color: #91d1df;
+        }
+
+        .letter-I {
+            color: #f7b407;
+            animation-delay: 1s;
+        }
+
+        .letter-N {
+            color: pink;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+
+        }
+
+        .sidebar-left {
+            border-right: 1px solid #202327;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 25vw;
+            height: calc(100% - 10vh);
+            background-color: black;
+        }
+
+        .sidebar-left-menu {
+            float: right;
+            top: 0;
+            width: 18vw;
+            height: 100%;
+            background-color: black;
+        }
+
+        .icon {
+            border-radius: 100%;
+            height: 10%;
+        }
+
+        .icon i {
+            padding: 10px;
+            color: #cbcbcb;
+            font-size: 30px;
+        }
+
+        .menu {
+            display: inline-block;
+            padding-bottom: 50px;
+            border-radius: 20px;
+            height: 45px;
+        }
+
+        .menu:hover {
+            background-color: #3d3b3b;
+        }
+
+        .menu a {
+            text-decoration: none;
+            padding: 10px;
+            font-size: 25px;
+            color: white;
+        }
+
+        .menu i {
+            padding: 10px 15px 10px 0px;
+            text-align: center;
+        }
+
+        .sidebar-right {
+            border-left: 1px solid #202327;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 35vw;
+            height: calc(100% - 10vh);
+            background-color: black;
+        }
+        .sidebar-right-content{
+            border: 1px solid #202327;
+            margin: 15px 15px 15px 15px;
+            width: 30vw;
+            height: 70vh;
+            background-color: black;
+        }
+
+        .main-content {
+            padding: 15px 15px 0px 15px;
+            border-color: #202327;
+            margin: 10vh 35vw 0 25vw;
+            word-wrap: break-word;
+            height: calc(100% - 10vh);
+            background-color: black;
+
+        }
+
+        .main-content-body {
+            font-size: 4vw;
+            font-family: "Ultra", serif;
+            color: #cbcbcb;
+            width: 100%;
+            height: calc(100% - 10vh);
+        }
+
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 10vh;
+            padding: 0 19px;
+            position: fixed;
+            margin: 0 35vw 0 25vw;
+            width: calc(40vw - 10px);
+            top: 0;
+            background-color: black;
+        }
+
+        .login {
+            font-size: 25px;
+        }
+
+        .login a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .search-bar {
+            color: white;
+            padding: 0px 10px 0px 10px;
+            height: 40px;
+            background-color: #202327;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            max-width: 450px;
+            width: 100%;
+        }
+
+        .search-bar i {
+            margin: 10px 15px;
+        }
+
+        input {
+            color: inherit;
+            outline: none;
+            border: none;
+            background: transparent;
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100vw;
+            height: 10vh;
+            background-color: #1d9bf0;
+        }
+
+        .footer-text {
+            margin-left: 25vw;
+        }
+
+        .footer-text p {
+            font-size: 26px
+        }
+
+        .footer-auth {
+            margin-top: 20px;
+            margin-right: 15vw;
+        }
+
+        .btn {
+            background: transparent;
+            border: none;
+            outline: none;
+        }
+
+        .btn-login {
+            border: 1px solid white;
+            border-radius: 20px;
+            background-color: #1d9bf0;
+            color: white;
+            width: 110px;
+        }
+
+        .btn-login:hover, .btn-register:hover {
+            background-color: #ffffff29;
+        }
+
+        .btn-register {
+            border: 1px solid white;
+            border-radius: 20px;
+            background-color: white;
+            color: black;
+            width: 90px;
+        }
+
+        /*Modal*/
+        .modal-content {
+            font-family: 'Quicksand', sans-serif;
+            background-color: black;
+            color: white;
+            box-shadow: 3px 1px 7px #aaaaaa;
+        }
+
+        .modal-header {
+            border: none;
+            outline: none;
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .modal-icon {
+            margin-left: 180px;
+            font-size: 25px;
+        }
+
+        .modal-header-x {
+            background: transparent;
+            color: #FFFFFFC8;
+            border: none;
+            outline: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 75%;
+        }
+
+        .modal-header-x:hover {
+            background-color: #cbcbcb4d;
+        }
+
+        .modal-icon {
+            margin-left: 170px;
+            font-size: 25px;
+        }
+
+        .modal-body-header h1 {
+            text-align: center;
+            font-size: 30px;
+            padding-bottom: 30px;
+        }
+
+        .modal-body hr {
+            background-color: white;
+            margin: 30px 30px;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: center;
+            border: none;
+            outline: none;
+        }
+
+        .modal-footer a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .modal-footer a:hover {
+            color: #d9e2f5f5;
+        }
+
+        .btn-modal-login {
+            margin-left: 30px;
+            border: 1px solid white;
+            border-radius: 20px;
+            background-color: white;
+            color: black;
+            height: 40px;
+            width: 400px;
+        }
+
+        .btn-modal-login:hover {
+            background-color: #d9e2f5f5;
+        }
+
+        /*--------------------------------*/
+        .btm-register {
+            margin-bottom: 20px;
+            margin-left: 30px;
+            border: 1px solid white;
+            border-radius: 20px;
+            background-color: white;
+            color: black;
+            height: 40px;
+            width: 400px;
+        }
+
+        .btm-back {
+            margin-left: 30px;
+            border: 1px solid white;
+            border-radius: 20px;
+            background-color: black;
+            color: white;
+            height: 40px;
+            width: 400px;
+        }
+
+        .btm-register:hover {
+            background-color: #d9e2f5f5;
+        }
+
+        .btm-back:hover {
+            background-color: rgba(41, 39, 39, 0.68)
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: none;
+            outline: none;
+            width: 100%;
+            height: 5vh;
+
+        }
+
+        .form-password {
+            width: 100%;
+            height: 5vh;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            padding-left: 15px;
+            font-size: 16px;
+        }
+
+        #eye, #register-eye i, #eye-register {
+            color: black;
+            margin-right: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="main">
+    <div class="sidebar-left">
+        <div class="sidebar-left-menu">
+            <div class="icon">
+                <i class="fa-regular fa-bong"></i>
+            </div>
+            <div class="menu">
+                <a href=""><i class="fa-regular fa-wand-magic-sparkles"> </i>Khám phá</a>
+            </div>
+            <div class="menu">
+                <a href=""><i class="fa-regular fa-gear"></i>Cài đặt</a>
+            </div>
+        </div>
+    </div>
+    <div class="header">
+        <div class="search-bar">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search">
+        </div>
+        <div class="login">
+            <a href=""><i class="fa-solid fa-face-smile-halo"></i></a>
+        </div>
+    </div>
+    <div class="main-content">
+        <div class="main-content-body">
+            <div class="bizzy">
+
+                <p class="bizzy-letters letter-b">B</p>
+                <p class="bizzy-letters letter-i">O</p>
+                <p class="bizzy-letters letter-z1">O</p>
+                <p class="bizzy-letters letter-z2">N</p>
+                <p class="bizzy-letters letter-y">G</p>
+
+            </div>
+
+            <div class="bizzy-B">
+
+                <p class="bizzy-letters-B letter-C">B</p>
+                <p class="bizzy-letters-B letter-O">O</p>
+                <p class="bizzy-letters-B letter-D">O</p>
+                <p class="bizzy-letters-B letter-I">N</p>
+                <p class="bizzy-letters-B letter-N">G</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-right">
+        <div class="sidebar-right-content">
+
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-text">
+            <p style="margin-bottom: 0">Đừng bỏ lỡ chuyện gì đang diễn ra</p>
+            <small>Bạn sẽ là người biết đầu tiền</small>
+        </div>
+        <div class="footer-auth">
+            <button class="btn btn-login" data-toggle="modal" data-target="#exampleModalLogin">Đăng nhập</button>
+            <button class="btn btn-register" data-toggle="modal" data-target="#exampleModalRegister">Đăng ký</button>
+        </div>
+    </footer>
+</div>
+
+
+<!-- Modal Sigin -->
+<div class="modal fade" id="exampleModalLogin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <button type="button" class="modal-header-x" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" style=" "><i class="fa-solid fa-x"></i></span>
+                    </button>
+                </div>
+                <div class="modal-icon">
+                    <i class="fa-regular fa-bong"></i>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-header">
+                    <h1>Đăng nhập vào boong</h1>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Tên tài khoản">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-password" id="password" placeholder="Mật khẩu">
+                    <div>
+                        <i id="eye" class="fa-solid fa-eye"></i>
+                    </div>
+                </div>
+                <small>
+                    * Lưu ý: Không chia sẻ mật khẩu với người lạ.
+                </small>
+
+                <hr>
+                <div class="modal-body-footer">
+                    <button class="btn btn-modal-login">Đăng nhập</button>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <p>Bạn không có tài khoản? <a href="">Đăng ký</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Register-->
+<div class="modal fade" id="exampleModalRegister" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <form action="/" method="post">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div>
+                        <button type="button" class="modal-header-x" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" style=" "><i class="fa-regular fa-x"></i></span>
+                        </button>
+                    </div>
+                    <div class="modal-icon">
+                        <i class="fa-regular fa-bong"></i>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="modal-body-header">
+                        <h1>Đăng ký boong ngay đee</h1>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Tên tài khoản">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Họ và tên">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-password" id="passwordRegister" placeholder="Mật khẩu">
+                        <div>
+                            <i id="eye-register" class="fa-solid fa-eye"></i>
+                        </div>
+                    </div>
+                    <small>
+                        * Lưu ý: Mật khẩu phải có ít nhất 6 ký tự, 1 chữ cái viết hoa và 1 ký tự đặc
+                        biệt.
+                    </small>
+                    <hr>
+                    <div class="modal-body-footer">
+                        <button class="btn btm-register" id="register">Đăng ký</button>
+                        <button class="btn btm-back">Quay lại</button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="">Tìm lại mật khẩu!</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    let pwEyeLogin = document.getElementById('eye');
+    let  inputPwLogin = document.getElementById('password');
+    pwEyeLogin.onclick = () => {
+        let typeInputPw = inputPwLogin.getAttribute('type');
+        let typeNew = (typeInputPw === 'password') ? 'text' : 'password';
+        inputPwLogin.setAttribute('type', typeNew);
+        let classNameCurrent = pwEyeLogin.getAttribute('class');
+        let newClassEye = (classNameCurrent === 'fa-solid fa-eye') ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+        pwEyeLogin.setAttribute('class', newClassEye)
+    }
+
+    let pwEyeRegister = document.getElementById('eye-register');
+    let  inputPwRegister = document.getElementById('passwordRegister');
+    pwEyeRegister.onclick = () => {
+        let typeInputPw = inputPwRegister.getAttribute('type');
+        let typeNew = (typeInputPw === 'password') ? 'text' : 'password';
+        inputPwRegister.setAttribute('type', typeNew);
+        let classNameCurrent = pwEyeRegister.getAttribute('class');
+        let newClassEye = (classNameCurrent === 'fa-solid fa-eye') ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
+        pwEyeRegister.setAttribute('class', newClassEye)
+    }
+
+
+    let btnRegister = document.getElementById('register');
+    btnRegister.addEventListener('click', (event) => {
+        event.preventDefault();
+        Swal.fire({
+            icon: 'success',
+            title: 'Đăng ký tài khoản thành công',
+            text: 'Hãy nhanh chân đăng nhập để kết nối với  mọi người trong boong nào',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    })
+</script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
+        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
+        crossorigin="anonymous"></script>
+</body>
+</html>
