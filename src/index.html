@@ -11,474 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+    <title>Index</title>
+    <link rel="stylesheet" href="views/layouts/css/index.css">
 
-    <title>Home</title>
-    <style>
-
-        @import url("https://fonts.googleapis.com/css2?family=Ultra&display=swap");
-
-        * {
-            font-family: 'Quicksand', sans-serif;
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --green: #b8d953;
-            --lilac: #b2b2eb;
-            --pink: #bb86e9;
-            --dark-green: #529a91;
-            --peach: #fe96b7;
-            --black: #191819;
-            --grey: #2a292a;
-            --white: #d9d9d9;
-        }
-
-
-        body {
-            background-color: black;
-            color: #FFFFFFC8;
-            display: flex;
-            place-content: center;
-            align-items: flex-end;
-            overflow: hidden;
-        }
-
-        .bizzy {
-            display: flex;
-            align-items: center;
-            gap: 5%;
-            justify-content: space-around;
-            max-height: 100px;
-            text-align: center;
-        }
-
-        @keyframes fontGrow {
-            0% {
-                transform: scaleY(1);
-            }
-            50% {
-                transform: scaleY(2);
-            }
-            100% {
-                transform: scaleY(1);
-            }
-        }
-
-        .bizzy-letters {
-            animation-name: fontGrow;
-            animation-duration: 2s;
-            animation-iteration-count: infinite;
-            transform-origin: top;
-            transition-timing-function: ease-in-out;
-        }
-
-        .letter-b {
-            color: var(--peach);
-        }
-
-        .letter-i {
-            color: var(--green);
-            animation-delay: 1s;
-        }
-
-        .letter-z1 {
-            color: var(--pink);
-        }
-
-        .letter-z2 {
-            color: var(--lilac);
-            animation-delay: 1s;
-        }
-
-        .letter-y {
-            color: var(--dark-green);
-        }
-
-        .bizzy-B {
-            display: flex;
-            justify-content: space-around;
-            gap: 5%;
-        }
-
-        @keyframes fontGrowReverse {
-            0% {
-                transform: scaleY(2);
-            }
-            50% {
-                transform: scaleY(1);
-            }
-            100% {
-                transform: scaleY(2);
-            }
-        }
-
-        .bizzy-letters-B {
-            animation-name: fontGrowReverse;
-            animation-duration: 2s;
-            animation-iteration-count: infinite;
-            transform-origin: bottom;
-            transition-timing-function: ease-in-out;
-
-        }
-
-        .letter-C {
-            color: #cbe69f;
-        }
-
-        .letter-O {
-            color: #cbe;
-            animation-delay: 1s;
-            font-stretch: ultra-condensed;
-        }
-
-        .letter-D {
-            color: #91d1df;
-        }
-
-        .letter-I {
-            color: #f7b407;
-            animation-delay: 1s;
-        }
-
-        .letter-N {
-            color: pink;
-        }
-
-        .main {
-            width: 100%;
-            height: 100%;
-
-        }
-
-        .sidebar-left {
-            border-right: 1px solid #202327;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 25vw;
-            height: calc(100% - 10vh);
-            background-color: black;
-        }
-
-        .sidebar-left-menu {
-            float: right;
-            top: 0;
-            width: 18vw;
-            height: 100%;
-            background-color: black;
-        }
-
-        .icon {
-            border-radius: 100%;
-            height: 10%;
-        }
-
-        .icon i {
-            padding: 10px;
-            color: #cbcbcb;
-            font-size: 30px;
-        }
-
-        .menu {
-            display: inline-block;
-            padding-bottom: 50px;
-            border-radius: 20px;
-            height: 45px;
-        }
-
-        .menu:hover {
-            background-color: #3d3b3b;
-        }
-
-        .menu a {
-            text-decoration: none;
-            padding: 10px;
-            font-size: 25px;
-            color: white;
-        }
-
-        .menu i {
-            padding: 10px 15px 10px 0px;
-            text-align: center;
-        }
-
-        .sidebar-right {
-            border-left: 1px solid #202327;
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 35vw;
-            height: calc(100% - 10vh);
-            background-color: black;
-        }
-        .sidebar-right-content{
-            border: 1px solid #202327;
-            margin: 15px 15px 15px 15px;
-            width: 30vw;
-            height: 70vh;
-            background-color: black;
-        }
-
-        .main-content {
-            padding: 15px 15px 0px 15px;
-            border-color: #202327;
-            margin: 10vh 35vw 0 25vw;
-            word-wrap: break-word;
-            height: calc(100% - 10vh);
-            background-color: black;
-
-        }
-
-        .main-content-body {
-            font-size: 4vw;
-            font-family: "Ultra", serif;
-            color: #cbcbcb;
-            width: 100%;
-            height: calc(100% - 10vh);
-        }
-
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 10vh;
-            padding: 0 19px;
-            position: fixed;
-            margin: 0 35vw 0 25vw;
-            width: calc(40vw - 10px);
-            top: 0;
-            background-color: black;
-        }
-
-        .login {
-            font-size: 25px;
-        }
-
-        .login a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .search-bar {
-            color: white;
-            padding: 0px 10px 0px 10px;
-            height: 40px;
-            background-color: #202327;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            max-width: 450px;
-            width: 100%;
-        }
-
-        .search-bar i {
-            margin: 10px 15px;
-        }
-
-        input {
-            color: inherit;
-            outline: none;
-            border: none;
-            background: transparent;
-            display: inline-block;
-            width: 100%;
-            height: 100%;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-
-        .footer {
-            display: flex;
-            justify-content: space-between;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100vw;
-            height: 10vh;
-            background-color: #1d9bf0;
-        }
-
-        .footer-text {
-            margin-left: 25vw;
-        }
-
-        .footer-text p {
-            font-size: 26px
-        }
-
-        .footer-auth {
-            margin-top: 20px;
-            margin-right: 15vw;
-        }
-
-        .btn {
-            background: transparent;
-            border: none;
-            outline: none;
-        }
-
-        .btn-login {
-            border: 1px solid white;
-            border-radius: 20px;
-            background-color: #1d9bf0;
-            color: white;
-            width: 110px;
-        }
-
-        .btn-login:hover, .btn-register:hover {
-            background-color: #ffffff29;
-        }
-
-        .btn-register {
-            border: 1px solid white;
-            border-radius: 20px;
-            background-color: white;
-            color: black;
-            width: 90px;
-        }
-
-        /*Modal*/
-        .modal-content {
-            font-family: 'Quicksand', sans-serif;
-            background-color: black;
-            color: white;
-            box-shadow: 3px 1px 7px #aaaaaa;
-        }
-
-        .modal-header {
-            border: none;
-            outline: none;
-            display: flex;
-            justify-content: flex-start;
-        }
-
-        .modal-icon {
-            margin-left: 180px;
-            font-size: 25px;
-        }
-
-        .modal-header-x {
-            background: transparent;
-            color: #FFFFFFC8;
-            border: none;
-            outline: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 75%;
-        }
-
-        .modal-header-x:hover {
-            background-color: #cbcbcb4d;
-        }
-
-        .modal-icon {
-            margin-left: 170px;
-            font-size: 25px;
-        }
-
-        .modal-body-header h1 {
-            text-align: center;
-            font-size: 30px;
-            padding-bottom: 30px;
-        }
-
-        .modal-body hr {
-            background-color: white;
-            margin: 30px 30px;
-        }
-
-        .modal-footer {
-            display: flex;
-            justify-content: center;
-            border: none;
-            outline: none;
-        }
-
-        .modal-footer a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .modal-footer a:hover {
-            color: #d9e2f5f5;
-        }
-
-        .btn-modal-login {
-            margin-left: 30px;
-            border: 1px solid white;
-            border-radius: 20px;
-            background-color: white;
-            color: black;
-            height: 40px;
-            width: 400px;
-        }
-
-        .btn-modal-login:hover {
-            background-color: #d9e2f5f5;
-        }
-
-        /*--------------------------------*/
-        .btm-register {
-            margin-bottom: 20px;
-            margin-left: 30px;
-            border: 1px solid white;
-            border-radius: 20px;
-            background-color: white;
-            color: black;
-            height: 40px;
-            width: 400px;
-        }
-
-        .btm-back {
-            margin-left: 30px;
-            border: 1px solid white;
-            border-radius: 20px;
-            background-color: black;
-            color: white;
-            height: 40px;
-            width: 400px;
-        }
-
-        .btm-register:hover {
-            background-color: #d9e2f5f5;
-        }
-
-        .btm-back:hover {
-            background-color: rgba(41, 39, 39, 0.68)
-        }
-
-        .form-group {
-            display: flex;
-            align-items: center;
-            background: white;
-            border: none;
-            outline: none;
-            width: 100%;
-            height: 5vh;
-
-        }
-
-        .form-password {
-            width: 100%;
-            height: 5vh;
-            border-radius: 5px;
-            background-color: white;
-            color: black;
-            padding-left: 15px;
-            font-size: 16px;
-        }
-
-        #eye, #register-eye i, #eye-register {
-            color: black;
-            margin-right: 10px;
-        }
-
-
-    </style>
 </head>
 <body>
 
@@ -530,6 +65,272 @@
     </div>
     <div class="sidebar-right">
         <div class="sidebar-right-content">
+            <div class="sidebar-right-content-tube">
+            <div class="tube">
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+            </div>
+            <div class="tube">
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+            </div>
+            <div class="tube">
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+            </div>
+            <div class="tube">
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+                <div class="strip"></div>
+            </div>
+            </div>
         </div>
     </div>
     <footer class="footer">
@@ -587,6 +388,9 @@
         </div>
     </div>
 </div>
+
+
+
 <!-- Modal Register-->
 <div class="modal fade" id="exampleModalRegister" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -636,42 +440,7 @@
     </div>
 </div>
 
-<script>
-    let pwEyeLogin = document.getElementById('eye');
-    let  inputPwLogin = document.getElementById('password');
-    pwEyeLogin.onclick = () => {
-        let typeInputPw = inputPwLogin.getAttribute('type');
-        let typeNew = (typeInputPw === 'password') ? 'text' : 'password';
-        inputPwLogin.setAttribute('type', typeNew);
-        let classNameCurrent = pwEyeLogin.getAttribute('class');
-        let newClassEye = (classNameCurrent === 'fa-solid fa-eye') ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
-        pwEyeLogin.setAttribute('class', newClassEye)
-    }
-
-    let pwEyeRegister = document.getElementById('eye-register');
-    let  inputPwRegister = document.getElementById('passwordRegister');
-    pwEyeRegister.onclick = () => {
-        let typeInputPw = inputPwRegister.getAttribute('type');
-        let typeNew = (typeInputPw === 'password') ? 'text' : 'password';
-        inputPwRegister.setAttribute('type', typeNew);
-        let classNameCurrent = pwEyeRegister.getAttribute('class');
-        let newClassEye = (classNameCurrent === 'fa-solid fa-eye') ? 'fa-solid fa-eye-slash' : 'fa-solid fa-eye';
-        pwEyeRegister.setAttribute('class', newClassEye)
-    }
-
-
-    let btnRegister = document.getElementById('register');
-    btnRegister.addEventListener('click', (event) => {
-        event.preventDefault();
-        Swal.fire({
-            icon: 'success',
-            title: 'Đăng ký tài khoản thành công',
-            text: 'Hãy nhanh chân đăng nhập để kết nối với  mọi người trong boong nào',
-            showConfirmButton: false,
-            timer: 2000
-        })
-    })
-</script>
+<script src="/views/layouts/js/index.js"></script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>

@@ -22,7 +22,7 @@ const sever = http.createServer((req, res)=>{
     if (filesDefences) {
         const extension = mimeTypes[filesDefences[0].toString().split('.')[1]];
         res.writeHead(200, {'Content-Type': extension});
-        fs.createReadStream(__dirname + req.url).pipe(res)
+        fs.createReadStream(__dirname +'/src'+ req.url).pipe(res)
     } else {
         switch (urlPath) {
             //Trang chủ
@@ -31,16 +31,7 @@ const sever = http.createServer((req, res)=>{
                     console.log(err.message);
                 });
                 break;
-            case '/login':
-                handle.login(req, res).catch(err => {
-                    console.log(err.message);
-                });
-                break;
-            case '/register':
-                handle.register(req, res).catch(err => {
-                    console.log(err.message);
-                });
-                break;
+
             default:
                 res.end();
         }
